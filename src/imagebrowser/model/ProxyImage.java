@@ -1,6 +1,9 @@
 package imagebrowser.model;
 
 import imagebrowser.persistence.ImageLoader;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class ProxyImage extends Image {
     
@@ -15,17 +18,16 @@ public class ProxyImage extends Image {
 
     @Override
     public Bitmap getBitmap() {
-        checkLoaded();
+        try {
+            checkLoaded();
+        } catch (IOException ex) {
+            Logger.getLogger(ProxyImage.class.getName()).log(Level.SEVERE, null, ex);
+        }
         return realImage.getBitmap();
     }
     
-    @Override
-    public Dimension getDimension() {
-        checkLoaded();
-        return realImage.getDimension();
-    }
     
-    private void checkLoaded() {
+    private void checkLoaded() throws IOException {
         if (realImage != null) return;
         realImage = loader.load();
     }
