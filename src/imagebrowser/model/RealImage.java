@@ -4,7 +4,7 @@ public class RealImage extends Image {
     
     private final Bitmap bitmap;
 
-    public RealImage(Bitmap bitmap, Dimension dimension) {
+    public RealImage(Bitmap bitmap) {
         this.bitmap = bitmap;
     }
 
