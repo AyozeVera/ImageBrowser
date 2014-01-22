@@ -1,8 +1,10 @@
 package imagebrowser.application;
 
 import imagebrowser.control.ActionListenerFactory;
+import imagebrowser.ui.ImageViewer;
 import imagebrowser.ui.ImageViewerPanel;
 import java.awt.BorderLayout;
+import java.awt.FlowLayout;
 import java.awt.HeadlessException;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -11,15 +13,17 @@ import javax.swing.JPanel;
 public class ApplicationFrame extends JFrame {
     
     private ActionListenerFactory factory;
-    private int index = 0;
     private ImageViewerPanel imageViewer;
+
+    public ImageViewerPanel getImageViewer() {
+        return imageViewer;
+    }
 
     public ApplicationFrame(ActionListenerFactory factory) throws HeadlessException {
         super("ImageBrowser: The best way to see your photos and pictures");
         this.factory = factory;
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
-        this.setSize(1024,800);
-       // this.setLayout(new FlowLayout());
+        this.setSize(1024,768);
         this.createComponents();
         this.setVisible(true);
     }

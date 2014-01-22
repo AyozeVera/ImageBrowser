@@ -2,6 +2,7 @@ package imagebrowser.persistence;
 
 import imagebrowser.model.Bitmap;
 import imagebrowser.model.Image;
+import imagebrowser.model.RealImage;
 import imagebrowser.ui.SwingBitmap;
 import java.awt.image.BufferedImage;
 import java.io.File;
@@ -15,7 +16,7 @@ public class ImageLoader {
         this.fileName = fileName;
     }
     public Image load() throws IOException{
-            return RealImage(loadBitmap());
+            return new RealImage(loadBitmap());
     }
 
     private Bitmap loadBitmap() throws IOException{
@@ -24,9 +25,5 @@ public class ImageLoader {
 
     private BufferedImage loadBufferedImage() throws IOException {
         return ImageIO.read(new File(fileName));
-    }
-
-    private Image RealImage(Bitmap loadBitmap) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
