@@ -23,13 +23,13 @@ public class ApplicationFrame extends JFrame {
         super("ImageBrowser: The best way to see your photos and pictures");
         this.factory = factory;
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
-        this.setSize(1024,768);
+        this.setSize(1024,600);
         this.createComponents();
         this.setVisible(true);
     }
 
    private void createComponents() {
-        this.add(createToolbarPanel(), BorderLayout.SOUTH);
+        this.add(createToolbarPanel(), BorderLayout.NORTH);
         this.add(createImagePanel());
     }
 
