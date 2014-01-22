@@ -1,4 +1,4 @@
-package imagebrowser.commands;
+package imagebrowser.control;
 
 import imagebrowser.ui.ImageViewer;
 import java.awt.event.ActionEvent;
