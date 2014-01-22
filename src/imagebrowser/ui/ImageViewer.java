@@ -2,19 +2,7 @@ package imagebrowser.ui;
 
 import imagebrowser.model.Image;
 
-public abstract class ImageViewer {
-    
-    private Image image;
-
-    public Image getImage() {
-        return image;
-    }
-
-    public void setImage(Image image) {
-        this.image = image;
-        refresh();
-    }
-    
-    public abstract void refresh();
-
+public interface ImageViewer {
+    public Image getImage();
+    public void setImage(Image image);
 }
